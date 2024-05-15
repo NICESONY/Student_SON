@@ -44,14 +44,9 @@ array	result
 
 
 def solution(array):
-    max_box = []
-    array_max = array
-    array_max.sort()
-    max_box.append(array_max[-1])
-    for i , value in enumerate(array) :
-        if value == max_box[0]:
-            max_box.append(i)
-    return max_box
+    max_value = max(array)
+    max_index = array.index(max_value)
+    return [max_value, max_index]
 
 
 print(solution([1, 8, 3]))

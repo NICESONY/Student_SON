@@ -23,6 +23,18 @@ phone_book	return
 
 
 def solution(phone_book):
+
+    phone_book.sort()
+    
+    for i in range(len(phone_book) - 1):
+        if phone_book[i+1].startswith(phone_book[i]): ## phone_book[i+1]이 phone_book[i]의 접두어면 startswith로 인해서 true
+            return False
+    return True
+
+
+## 아래 풀이로 하면 시간 초과로 안돼는 것이 존재함
+
+def solution(phone_book):
     phone_book = "".join(phone_book)
     hash_map = {}
     for i in phone_book :
